@@ -20,7 +20,7 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void { }
 
   onSubmit(): void {
-    console.log(this.loginForm.controls['email'].errors?.['required']);
+    console.log("hola");
   }
 
 }

@@ -1,20 +1,23 @@
 <div class="container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="container">
-        <mat-form-field>
-            <input matInput type="email" placeholder="Email" formControlName="email" />
-            <mat-error *ngIf="this.loginForm.controls['email'].errors?.['required']">
-                An email is required
-            </mat-error>
-            <mat-error *ngIf="this.loginForm.controls['email'].errors?.['email']">
-                The email is not correct
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput type="password" placeholder="Password" formControlName="password" />
-            <mat-error *ngIf="this.loginForm.controls['password'].errors?.['required']">
-                A password is required
-            </mat-error>
-        </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Login</button>
-    </form>
+    <mat-card>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="form">
+            <h2>Log In</h2>
+            <mat-form-field class="form-field">
+                <input matInput type="email" placeholder="Email" formControlName="email" />
+                <mat-error *ngIf="this.loginForm.controls['email'].errors?.['required']">
+                    An email is required
+                </mat-error>
+                <mat-error *ngIf="this.loginForm.controls['email'].errors?.['email']">
+                    The email is not correct
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field">
+                <input matInput type="password" placeholder="Password" formControlName="password" />
+                <mat-error *ngIf="this.loginForm.controls['password'].errors?.['required']">
+                    A password is required
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">Login</button>
+        </form>
+    </mat-card>
 </div>
