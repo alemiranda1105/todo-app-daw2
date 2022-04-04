@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { User } from '../interfaces/User';
 
 @Component({
@@ -7,18 +8,19 @@ import { User } from '../interfaces/User';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  userData: User = {
-    email: "",
-    password: ""
-  };
+  loginForm: FormGroup;
 
-  constructor() { }
+  constructor() {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required])
+    });
+   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  displayUser(): void {
-    console.log(this.userData);
+  onSubmit(): void {
+    console.log(this.loginForm.controls['email'].errors?.['required']);
   }
 
 }
