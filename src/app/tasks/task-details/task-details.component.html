@@ -1,5 +1,32 @@
 <div class="container">
-    <div *ngIf="task">
-        <h3>{{ task.name  }}</h3>
+    <div id="card-container" *ngIf="task">
+        <mat-card *ngIf="task">
+            <mat-card-header>
+                <h2>{{ task.name }}</h2>
+            </mat-card-header>
+            <mat-card-subtitle>
+                <h4>{{ task.date }}</h4>
+                <h4 *ngIf="task.completed">Completada</h4>
+                <h4 *ngIf="!task.completed">Pendiente</h4>
+            </mat-card-subtitle>
+            <mat-card-content>
+                <p>
+                    {{ task.description }}
+                </p>
+            </mat-card-content>
+            <mat-card-footer>
+                <div class="buttons">
+                    <button type="button" mat-raised-button color="accent">
+                        Edit
+                    </button>
+                    <button type="button" mat-button color="warn">
+                        Delete
+                    </button>
+                </div>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+    <div *ngIf="!task">
+        <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
     </div>
 </div>
