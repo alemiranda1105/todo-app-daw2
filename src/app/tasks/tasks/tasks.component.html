@@ -15,11 +15,14 @@
         </mat-card-content>
         <mat-card-footer>
             <div class="buttons">
-                <button type="button" mat-raised-button color="primary">
-                    Editar
+                <a [routerLink]="['/details']" mat-raised-button color="primary">
+                    Details
+                </a>
+                <button type="button" mat-raised-button color="accent">
+                    Edit
                 </button>
                 <button type="button" mat-button color="warn">
-                    Eliminar
+                    Delete
                 </button>
             </div>
         </mat-card-footer>

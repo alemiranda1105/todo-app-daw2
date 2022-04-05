@@ -8,10 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TasksModule } from './tasks/tasks.module';
 import { MaterialModule } from './material/material.module';
+import { TaskPageComponent } from './task-page/task-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskPageComponent
   ],
   imports: [
     MaterialModule,

@@ -4,6 +4,8 @@ import { TaskFormComponent } from './task-form/task-form.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { MaterialModule } from '../material/material.module';
+import { TasksRoutingModule } from './tasks-routing.module';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 
 
@@ -11,10 +13,12 @@ import { MaterialModule } from '../material/material.module';
   declarations: [
     TaskFormComponent,
     TasksComponent,
-    TasksListComponent
+    TasksListComponent,
+    TaskDetailsComponent
   ],
   imports: [
     CommonModule,
+    TasksRoutingModule,
     MaterialModule
   ],
   exports: [

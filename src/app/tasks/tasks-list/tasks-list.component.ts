@@ -12,6 +12,7 @@ export class TasksListComponent implements OnInit {
     this.taskList = []
     for(var i = 0; i < 6; i++) {
       this.taskList.push({
+        id: `${i}`,
         name: `Task ${i}`,
         description: `Description ${i}`,
         user_id: "1",
