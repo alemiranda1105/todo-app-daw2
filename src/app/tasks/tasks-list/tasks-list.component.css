@@ -3,3 +3,11 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.create-button-container {
+    width: 100%;
+    padding: 1.45rem;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
