@@ -18,9 +18,9 @@
                 <a [routerLink]="['/details/' + task.id]" mat-raised-button color="primary">
                     Details
                 </a>
-                <button type="button" mat-raised-button color="accent">
+                <a [routerLink]="['/edit/' + task.id]" mat-raised-button color="accent">
                     Edit
-                </button>
+                </a>
                 <button type="button" mat-button color="warn">
                     Delete
                 </button>

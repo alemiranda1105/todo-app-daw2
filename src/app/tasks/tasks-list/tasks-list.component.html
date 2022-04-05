@@ -3,8 +3,8 @@
         <app-tasks [task]="task"></app-tasks>
     </div>
     <div class="create-button-container">
-        <button mat-fab>
+        <a [routerLink]="['/create/']" mat-fab>
             <mat-icon>library_add</mat-icon>
-        </button>
+        </a>
     </div>
 </div>
