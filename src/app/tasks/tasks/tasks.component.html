@@ -1,0 +1,17 @@
+<div class="container">
+    <mat-card *ngIf="task">
+        <mat-card-header>
+            <h2>{{ task.name }}</h2>
+        </mat-card-header>
+        <mat-card-subtitle>
+            <h4>{{ task.date }}</h4>
+            <h4 *ngIf="task.completed">Completada</h4>
+            <h4 *ngIf="!task.completed">Pendiente</h4>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <p>
+                {{ task.description }}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

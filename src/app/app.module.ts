@@ -11,11 +11,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
+import { TasksComponent } from './tasks/tasks/tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksListComponent,
+    TasksComponent,
   ],
   imports: [
     BrowserModule,
