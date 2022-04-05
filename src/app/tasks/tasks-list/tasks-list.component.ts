@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserTask } from '../interfaces/task.interface';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-tasks-list',
@@ -7,22 +8,16 @@ import { UserTask } from '../interfaces/task.interface';
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent implements OnInit {
-  taskList: UserTask[]
-  constructor() { 
-    this.taskList = []
-    for(var i = 0; i < 6; i++) {
-      this.taskList.push({
-        id: `${i}`,
-        name: `Task ${i}`,
-        description: `Description ${i}`,
-        user_id: "1",
-        completed: false,
-        date: "10-04-2022"
-      })
-    }
-  }
+  taskList?: UserTask[]
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.getTasks();
+  }
+
+  getTasks(): void {
+    this.taskService.getUserTasks()
+    .subscribe(tasks => this.taskList = tasks);
   }
 
 }
