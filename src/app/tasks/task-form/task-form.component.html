@@ -1,4 +1,8 @@
 <div class="container">
+    <a mat-raised-button color="accent" [routerLink]="['/']" id="backButton">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        <span>Back</span>
+    </a>
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" novalidate>
         <h1 *ngIf="task">Edit {{ task.name }}</h1>
         <h1 *ngIf="!task">Add a new task</h1>

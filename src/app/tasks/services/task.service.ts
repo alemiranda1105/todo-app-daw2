@@ -23,6 +23,12 @@ export class TaskService {
     return of(task);
   }
 
+  createTask(task: UserTask): Observable<UserTask> {
+    task.id = (this.tasks.length + 1).toString();
+    this.tasks.push(task);
+    return of(task);
+  }
+
   updateTask(task: UserTask): Observable<boolean> {
     this.tasks = this.tasks.filter(t => t.id !== task.id);
     this.tasks.push(task);

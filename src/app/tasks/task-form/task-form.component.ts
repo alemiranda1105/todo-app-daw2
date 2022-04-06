@@ -36,6 +36,9 @@ export class TaskFormComponent implements OnInit {
         switchMap( ({id}) => this.taskService.getTaskById(id) )
       )
       .subscribe(task => {
+        if(!task) {
+          this.router.navigate(['/']);
+        }
         this.task = task;
         this.newTask = false;
         this.taskForm.controls['name'].setValue(task.name);
@@ -68,6 +71,13 @@ export class TaskFormComponent implements OnInit {
             this.router.navigate(['/']);
           }
         });
+      } else {
+        this.taskService.createTask(this.task!)
+        .subscribe(res => {
+          if(res.id) {
+            this.router.navigate(['/edit', {id: res.id}])
+          }
+        })
       }
     }
   }
