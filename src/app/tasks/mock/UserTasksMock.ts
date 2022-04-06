@@ -9,7 +9,7 @@ export const taskList = () => {
             description: `Description ${i}`,
             user_id: "1",
             completed: false,
-            date: "10-04-2022"
+            date: 'Jun 15, 2015, 21:43:11 UTC'
         })
     }
     return list;

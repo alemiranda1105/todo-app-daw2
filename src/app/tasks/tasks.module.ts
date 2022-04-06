@@ -6,6 +6,7 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { MaterialModule } from '../material/material.module';
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TaskDetailsComponent } from './task-details/task-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +19,7 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     TasksRoutingModule,
     MaterialModule
   ],
