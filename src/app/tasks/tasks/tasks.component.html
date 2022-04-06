@@ -21,8 +21,8 @@
                 <a [routerLink]="['/edit/' + task.id]" mat-raised-button color="accent">
                     Edit
                 </a>
-                <button type="button" mat-button color="warn">
-                    Delete
+                <button type="button" mat-button color="warn" (click)="deleteTask(task.id)">
+                    <mat-icon>delete</mat-icon>
                 </button>
             </div>
         </mat-card-footer>

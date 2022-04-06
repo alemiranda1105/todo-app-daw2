@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { UserTask } from '../interfaces/task.interface';
 import { TaskService } from '../services/task.service';
@@ -14,6 +14,7 @@ export class TaskDetailsComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private taskService: TaskService
     ) { }
 
@@ -23,6 +24,15 @@ export class TaskDetailsComponent implements OnInit {
       switchMap( ({id}) => this.taskService.getTaskById(id) )
     )
     .subscribe( task => this.task = task);
+  }
+
+  deleteTask(): void {
+    this.taskService.deleteTask(this.task!.id)
+    .subscribe(res => {
+      if(res) {
+        this.router.navigate(['/']);
+      }
+    })
   }
 
 }

@@ -34,4 +34,10 @@ export class TaskService {
     this.tasks.push(task);
     return of(true);
   }
+
+  deleteTask(id: string): Observable<boolean> {
+    const oldLength = this.tasks.length;
+    this.tasks = this.tasks.filter(t => t.id !== id);
+    return of(this.tasks.length < oldLength);
+  }
 }
