@@ -53,7 +53,23 @@ export class TaskFormComponent implements OnInit {
       ...this.task,
       ...this.taskForm.value
     };
-    console.log(this.task);
+    var invalid = [];
+    const controls = this.taskForm.controls;
+    for(const name in controls) {
+      if(controls[name].invalid) {
+        invalid.push(name);
+      }
+    }
+    if(invalid.length === 0){
+      if(!this.newTask) {
+        this.taskService.updateTask(this.task!)
+        .subscribe(res => {
+          if(res) {
+            this.router.navigate(['/']);
+          }
+        });
+      }
+    }
   }
 
 }
