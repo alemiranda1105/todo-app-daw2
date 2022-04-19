@@ -20,9 +20,3 @@
 .container form button {
     max-width: 150px;
 }
-
-#backButton {
-    display: flex;
-    align-items: center;
-    max-width: fit-content;
-}

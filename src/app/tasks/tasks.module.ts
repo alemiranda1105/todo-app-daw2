@@ -7,6 +7,7 @@ import { MaterialModule } from '../material/material.module';
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UiModule } from '../ui/ui.module';
 
 
 
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     TasksRoutingModule,
+    UiModule,
     MaterialModule
   ],
   exports: [
